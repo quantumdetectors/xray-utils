@@ -3,7 +3,7 @@
     $config = json_decode($file);
 ?><!DOCTYPE html>
 
-<html>
+<html manifest="cache.manifest">
     
     <head>
 
