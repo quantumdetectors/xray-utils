@@ -1,0 +1,52 @@
+// Header
+// ---------------------------------------------------------
+
+.page-header {
+	background: $header-background;
+	color: $header-color;
+
+	top: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+
+	ul {
+		display: flex;
+
+		li {
+			flex: 1;
+			text-align: center;
+
+			a {
+				text-align: center;
+				display: block;
+				padding: 15px 10px;
+				text-decoration: none;
+				color: $header-color;
+
+				&:hover {
+					color: $header-hover-color;
+				}
+
+				&.active {
+					color: $header-active;
+					font-weight: $bold;
+					background: darken($header-background, 10%);
+				}
+			}
+		}
+	}
+}
+
+
+
+.page-footer {
+	background-color: $footer-background;
+	color: $footer-color;
+
+	bottom: 0;
+	position: fixed;
+	text-align: center;
+	padding: 5px;
+	width: calc(100% - 10px);
+}

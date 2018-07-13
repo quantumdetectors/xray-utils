@@ -1,0 +1,43 @@
+@import "compass";
+@import "modules/all";
+@import "compass/css3/transition";
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: $body-background;
+    font-family: $main-font;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+    -webkit-text-size-adjust: 100%;
+//     min-height: 100%;
+}
+
+a {
+    color: $link-color;
+    
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+
+
+.content {
+    background-color: $content-background;
+    margin-top: 40px;
+    margin-bottom: 85px;
+    height: 100%;
+    padding: 10px;
+}
+
+.page-content {
+	height: calc(100% - 15px);
+}

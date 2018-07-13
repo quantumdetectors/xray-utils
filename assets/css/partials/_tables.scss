@@ -1,0 +1,125 @@
+// Tables
+
+.table {
+    &.table-no-margin {
+        margin: 0;
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+
+        td,
+        th {
+            padding: 5px;
+        }
+
+        td.extra, th.extra {
+            display: none;
+
+            &.show {
+                display: table-cell;
+            }
+        }
+
+        @media (max-width: $breakpoint-vsmall) {
+            td.extra, th.extra {
+                &.show {
+                    display: block;
+                }
+            }
+        }
+
+        thead th, thead th button {
+            font-family: $table-header-font;
+            font-size: $table-header-font-size;
+
+            text-align: center;
+            background: $table-header-background;
+            color: $table-header-color;
+            border: 0;
+            
+            &.sorting_asc {
+                background: $table-header-background url('images/sort_asc.png') no-repeat right center;
+            }
+            
+            &.sorting_desc {
+                background: $table-header-background url('images/sort_desc.png') no-repeat right center;
+            }
+            
+            &.sorting {
+                background: $table-header-background url('images/sort_both.png') no-repeat right center;
+            }
+        }
+
+        
+        tbody {
+            th {
+                text-align: left;
+                background: $table-header-background;
+            }
+            
+            td {
+                font-size: $table-font-size;
+
+                text-align: center;
+                background: $table-body-background;
+                
+                &.la {
+                    @extend .la;
+                }
+                
+            }
+            
+            tr {
+                .deactivate {
+                    display: none;
+                }
+            }
+            
+            tr:nth-child(odd) td,
+            tr.odd td {
+                background: $table-body-background-odd;
+            }
+            
+            td span.sort {
+                display: none;
+            }
+        }
+
+        
+        tfoot {
+            
+            th {
+                text-align: left;
+            }
+            
+            td {
+                background: $table-footer-background;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+
+        
+        // Background follows cursor
+        &.hover-row {
+            tr.selected td,
+            tr:hover td {
+                cursor: pointer;
+                background: $table-row-hover-background;
+            }
+        }
+        
+        // Stop last column word wrapping (for buttons)
+        &.no-wrap-last {
+            tr td:last-child {
+                white-space: nowrap;
+            }
+        }
+        
+    }
+
+}

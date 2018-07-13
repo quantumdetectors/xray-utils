@@ -1,0 +1,57 @@
+// Colours
+
+// Body
+$body-background: #f4f4f4;
+$body-color: #000000;
+
+// Default Links
+$link-color: #666666;
+$link-hover-color: #222222;
+
+
+
+// Header
+$header-background: rgb(15, 144, 209);
+$header-color: #cdcdcd;
+$header-hover-color: #fff;
+$header-active: #eee;
+
+
+
+// Content
+$content-background: #f4f4f4;
+$content-border: #e2e2e2;
+$content-fill-color: #efefef;
+
+$content-header-color: #000000;
+$content-header-border: grey;
+
+
+
+// Footer
+$footer-background: #000000;
+$footer-color: #efefef;
+$footer-hover-color: #efefef;
+
+
+
+// Tables
+$table-header-color: #f1f1f1;
+$table-header-background: #000;
+
+$table-header-light-background: #efefef;
+$table-header-light-color: #000000;
+
+$table-body-background: $table-header-color;
+$table-body-background-odd: #ebebeb;
+$table-body-color: #000000;
+
+$table-row-hover-background: #dedede;
+$table-footer-background: #dfdfdf;
+
+$table-page-background: $table-header-background;
+$table-pages-color: #efefef;
+
+$table-pages-active-background: transparent;
+$table-pages-active-color: $table-page-background;
+$table-pages-disable-color: #ababab;

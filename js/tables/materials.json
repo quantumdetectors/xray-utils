@@ -1,0 +1,424 @@
+[
+  {
+    "density": 0.79,
+    "name": "Acetone",
+    "formula": "C3H6O"
+  },
+  {
+    "density": 0.0013,
+    "name": "Air",
+    "formula": "(N2)0.78(O2)0.21(CO2)0.03Ar0.01Kr0.000001Xe0.0000009",
+    "ip": 27
+  },
+  {
+    "density": 2.62,
+    "name": "Albite",
+    "formula": "NaAlSi3O8"
+  },
+  {
+    "density": 0.789,
+    "name": "Alcohol(Ethyl)",
+    "formula": "C2O5OH"
+  },
+  {
+    "density": 0.792,
+    "name": "Alcohol(Methyl)",
+    "formula": "CH3OH"
+  },
+  {
+    "density": 0.804,
+    "name": "Alcohol(Propyl)",
+    "formula": "C3H8O"
+  },
+  {
+    "density": 4.32,
+    "name": "Almandine",
+    "formula": "Fe3Al2Si3O12"
+  },
+  {
+    "density": 2.72,
+    "name": "Aluminum",
+    "formula": "Al"
+  },
+  {
+    "density": 2.76,
+    "name": "Anorthite",
+    "formula": "CaAl2Si2O8"
+  },
+  {
+    "density": 2.95,
+    "name": "Aragonite",
+    "formula": "CaCO3"
+  },
+  {
+    "density": 0.001784,
+    "name": "Argon",
+    "formula": "Ar",
+    "ip": 26.2
+  },
+  {
+    "density": 1.06,
+    "name": "Blood",
+    "formula": "CHN0.3O7.6"
+  },
+  {
+    "density": 1.92,
+    "name": "Bone",
+    "formula": "C1.5H0.3O4.3N0.4PCa2.2"
+  },
+  {
+    "density": 2.29,
+    "name": "BoronNitride",
+    "formula": "BN"
+  },
+  {
+    "density": 1.04,
+    "name": "BrainMatter",
+    "formula": "C1.4HO7.1N0.2"
+  },
+  {
+    "density": 8.5,
+    "name": "Brass,alpha",
+    "formula": "Cu3Zn"
+  },
+  {
+    "density": 2.71,
+    "name": "Calcite",
+    "formula": "CaCO3"
+  },
+  {
+    "density": 3.51,
+    "name": "Carbon(Diamond)",
+    "formula": "C"
+  },
+  {
+    "density": 2.25,
+    "name": "Carbon(Graphite)",
+    "formula": "C"
+  },
+  {
+    "density": 1.31,
+    "name": "CelulloseAcetate",
+    "formula": "C7H8O4"
+  },
+  {
+    "density": 4.6,
+    "name": "Chromite",
+    "formula": "FeCr2O4"
+  },
+  {
+    "density": 2.3,
+    "name": "Concrete",
+    "formula": "Si3K0.1Ca0.4Al0.2Na0.15O5.7H0.2"
+  },
+  {
+    "density": 8.94,
+    "name": "Copper",
+    "formula": "Cu"
+  },
+  {
+    "density": 4.02,
+    "name": "Corundrum",
+    "formula": "Al2O3"
+  },
+  {
+    "density": 1.07,
+    "name": "EyeLens",
+    "formula": "C1.95H0.96N0.57O6.4"
+  },
+  {
+    "density": 4.36,
+    "name": "Fayalite",
+    "formula": "Fe2SiO4"
+  },
+  {
+    "density": 3.18,
+    "name": "Fluorite",
+    "formula": "CaF2"
+  },
+  {
+    "density": 3.02,
+    "name": "Forsterite",
+    "formula": "Mg2SiO4"
+  },
+  {
+    "density": 2.23,
+    "name": "Glass,Borosilicate",
+    "formula": "Si3.7O5.3Na0.3Al0.1B0.4"
+  },
+  {
+    "density": 6.22,
+    "name": "Glass,Lead",
+    "formula": "Si1.6O3Pb15"
+  },
+  {
+    "density": 4.37,
+    "name": "Goethite",
+    "formula": "FeOOH"
+  },
+  {
+    "density": 19.37,
+    "name": "Gold",
+    "formula": "Au"
+  },
+  {
+    "density": "9e-005",
+    "name": "Helium",
+    "formula": "He",
+    "ip": 41.5
+  },
+  {
+    "density": 5.26,
+    "name": "Hematite",
+    "formula": "Fe2O3"
+  },
+  {
+    "density": 3.15,
+    "name": "Hydroxyapatite",
+    "formula": "Ca5(PO4)3(OH)"
+  },
+  {
+    "density": 7.86,
+    "name": "Iron",
+    "formula": "Fe"
+  },
+  {
+    "density": 1.42,
+    "name": "Kapton",
+    "formula": "C22H10O4N2"
+  },
+  {
+    "density": 1.2,
+    "name": "Kimol",
+    "formula": "C16H14O3"
+  },
+  {
+    "density": 0.00374,
+    "name": "Krypton",
+    "formula": "Kr",
+    "ip": 24.4
+  },
+  {
+    "density": 11.34,
+    "name": "Lead",
+    "formula": "Pb"
+  },
+  {
+    "density": 8.06,
+    "name": "LeadTitanate",
+    "formula": "PbTiO3"
+  },
+  {
+    "density": 1.05,
+    "name": "Lung",
+    "formula": "C1.05H1.03N0.31O7.4"
+  },
+  {
+    "density": 5.18,
+    "name": "Magnetite",
+    "formula": "Fe3O4"
+  },
+  {
+    "density": 2.83,
+    "name": "Mica",
+    "formula": "KAl3Si3O12H2"
+  },
+  {
+    "density": 10.22,
+    "name": "Molybdenum",
+    "formula": "Mo"
+  },
+  {
+    "density": 1.05,
+    "name": "Muscle",
+    "formula": "C1.43H1.02N0.34O7.1"
+  },
+  {
+    "density": 1.4,
+    "name": "Mylar",
+    "formula": "C10H8O4"
+  },
+  {
+    "density": 0.000905,
+    "name": "Neon",
+    "formula": "Ne",
+    "ip": 40.9
+  },
+  {
+    "density": 0.00125,
+    "name": "Nitrogen",
+    "formula": "N2",
+    "ip": 34.6
+  },
+  {
+    "density": 2.57,
+    "name": "Orthoclase",
+    "formula": "KAlSi3O8"
+  },
+  {
+    "density": 1.19,
+    "name": "PMMA",
+    "formula": "C5H8O2"
+  },
+  {
+    "density": 0.85,
+    "name": "Paraffin",
+    "formula": "C20H42"
+  },
+  {
+    "density": 1.29,
+    "name": "Parylene-C",
+    "formula": "C8H7Cl"
+  },
+  {
+    "density": 1.11,
+    "name": "Parylene-N",
+    "formula": "C8H8"
+  },
+  {
+    "density": 21.37,
+    "name": "Platinum",
+    "formula": "Pt"
+  },
+  {
+    "density": 1.2,
+    "name": "Polycarbonate",
+    "formula": "C16H14O3"
+  },
+  {
+    "density": 1.43,
+    "name": "Polymide",
+    "formula": "C22H10N2O5"
+  },
+  {
+    "density": 0.9,
+    "name": "Polypropylene",
+    "formula": "C3H6"
+  },
+  {
+    "density": 5.02,
+    "name": "Pyrite",
+    "formula": "FeS2"
+  },
+  {
+    "density": 4.2,
+    "name": "Rutile",
+    "formula": "TiO2"
+  },
+  {
+    "density": 4.26,
+    "name": "Rutile",
+    "formula": "TiO2"
+  },
+  {
+    "density": 2.165,
+    "name": "Salt",
+    "formula": "NaCl"
+  },
+  {
+    "density": 3.97,
+    "name": "Sapphire",
+    "formula": "Al2O3"
+  },
+  {
+    "density": 1.715,
+    "name": "Saran",
+    "formula": "CHCl"
+  },
+  {
+    "density": 2.65,
+    "name": "SiO2(Quartz)",
+    "formula": "SiO2"
+  },
+  {
+    "density": 2.2,
+    "name": "SiO2(Silica)",
+    "formula": "SiO2"
+  },
+  {
+    "density": 2.33,
+    "name": "Silicon",
+    "formula": "Si"
+  },
+  {
+    "density": 3.1,
+    "name": "SiliconNitride",
+    "formula": "Si3N4"
+  },
+  {
+    "density": 10.5,
+    "name": "Silver",
+    "formula": "Ag"
+  },
+  {
+    "density": 3.5,
+    "name": "Spinel",
+    "formula": "MgAl2O4"
+  },
+  {
+    "density": 16.6,
+    "name": "Tantalum",
+    "formula": "Ta"
+  },
+  {
+    "density": 2.2,
+    "name": "Teflon",
+    "formula": "C2F4"
+  },
+  {
+    "density": 0.95,
+    "name": "Tissue,Adispose",
+    "formula": "C5.3O2.5HN0.06"
+  },
+  {
+    "density": 1.06,
+    "name": "Tissue,Soft",
+    "formula": "C1.43H1.02N0.34O7.08"
+  },
+  {
+    "density": 0.867,
+    "name": "Toluene",
+    "formula": "C7H8"
+  },
+  {
+    "density": 19.3,
+    "name": "Tungsten",
+    "formula": "W"
+  },
+  {
+    "density": 2.205,
+    "name": "ULE",
+    "formula": "Si0.925Ti0.075O2"
+  },
+  {
+    "density": 1.0,
+    "name": "Water",
+    "formula": "H2O"
+  },
+  {
+    "density": 0.00588,
+    "name": "Xenon",
+    "formula": "Xe",
+    "ip": 21.2
+  },
+  {
+    "density": 0.844,
+    "name": "Xylene",
+    "formula": "C6H4(CH3)2"
+  },
+  {
+    "density": 4.56,
+    "name": "YAG",
+    "formula": "Y3Al5O12"
+  },
+  {
+    "density": 2.53,
+    "name": "Zerodur",
+    "formula": "Si0.56Al0.5P0.16Li0.04Ti0.02Zr0.02Zn0.03O2.46"
+  },
+  {
+    "density": 7.14,
+    "name": "Zinc",
+    "formula": "Zn"
+  }
+]

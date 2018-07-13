@@ -1,0 +1,44 @@
+// Clearfix
+.clearfix {
+    @include clearfix;
+}
+
+// Misc helpers
+.r {
+    float: right;
+}
+
+.l {
+    float: left;
+}
+
+
+.la {
+    text-align: left;
+}
+
+.ra {
+    text-align: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.b {
+    font-weight: bold;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+
+@media (max-width: $breakpoint-vsmall) {
+    
+    h1 {
+        font-size: 12px;
+    }
+    
+}
