@@ -16,7 +16,7 @@
 
         <script type="text/javascript" data-main="<?php echo $config->appurl ?>/js/main" src="<?php echo $config->appurl ?>/js/vendor/requirejs/require.js"></script>
 
-        <title>Quantum Detectors</title>
+        <title>Xray Utils</title>
                 
     </head>
     

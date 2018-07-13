@@ -1,9 +1,9 @@
 {
   "name": "xray-book",
   "authors": [
-    "stufisher <stu@q3f.org>"
+    "stufisher <info@quantumdetectors.com>"
   ],
-  "description": "The orange book",
+  "description": "Port of Sam Webbs Xray-Utils",
   "main": "",
   "license": "MIT",
   "homepage": "",
