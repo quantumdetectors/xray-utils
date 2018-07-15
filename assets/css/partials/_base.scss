@@ -41,3 +41,26 @@ a {
 .page-content {
 	height: calc(100% - 15px);
 }
+
+.splash {
+	padding: 20px;
+    text-align: center;
+    background: $header-background;
+    height: calc(100vh - 40px);
+    position: relative;
+
+	h1 {
+		color: #0166a5;
+		font-weight: $bold;
+		margin-bottom: 5px;
+		font-size: $page-header-size;
+		font-family: $page-header-font;
+	}
+	
+    img {
+    	position: fixed;
+    	bottom: 20px;
+    	left: 20px;
+    	max-width: calc(100% - 40px);
+    }
+}
