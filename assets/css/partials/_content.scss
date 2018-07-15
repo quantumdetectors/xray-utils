@@ -48,6 +48,12 @@ img.status {
 	padding: 5px;
 	margin: 5px 0;
 	width: auto;
+	transition: background 0.3s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background: #eee
+	}
 
 	h2 {
 		margin: 0;
@@ -144,7 +150,7 @@ input, select {
 .form {
 	margin-top: 15px;
 	display: grid;
-	grid-template-columns: 70px 1fr 40px;
+	grid-template-columns: 90px 1fr 40px;
     grid-gap: 16px 15px;
 
     &:first {
