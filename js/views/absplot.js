@@ -115,7 +115,7 @@ define(['backbone.marionette',
                 if (!mat.get('thickness')) return
                 var series = { label: mat.get('name'), data: [] }
 
-                var p = mat.calcMu({ energies: _.range(1,30,0.1) })
+                var p = mat.calcMu({ energies: _.range(1,30,0.05) })
                 workers.push(p)
 
                 p.then(function(data) {
