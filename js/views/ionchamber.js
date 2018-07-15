@@ -56,6 +56,8 @@ define(['backbone.marionette',
         onRender: function() {
             this.ui.g1.html(this.materials.opts())
             this.ui.g2.html(this.materials.opts())
+
+            this.calculateIC()
         },
 
         calculateIC: function() {

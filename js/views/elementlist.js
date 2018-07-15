@@ -28,7 +28,7 @@ define(['backbone.marionette',
     var PeriodicElementView = Marionette.View.extend({
         template: _.template('<span class="number"><%-number%></span><h2><%-symbol%></h2><p><%-name%>'),
         className: function() {
-            console.log(this.model.get('symbol'), this.model.get('edges'))
+            // console.log(this.model.get('symbol'), this.model.get('edges'))
             return 'periodic-element period-'+this.model.get('period')
                 +(this.model.get('isSelected') ? ' selected' : '')
                 +(!this.model.get('edges').length ? ' no-edges' : '')
@@ -77,7 +77,7 @@ define(['backbone.marionette',
         childView: PeriodItemView,
 
         onRender: function() {
-            console.log('render periodicview', this.getOption('elements'), this.childViewOptions)
+            // console.log('render periodicview', this.getOption('elements'), this.childViewOptions)
             this.listenTo(this.childViewOptions.elements, 'reset', this.checkFiltered)
         },
 
@@ -171,6 +171,10 @@ define(['backbone.marionette',
         onRender: function() {
             this.filtered = filteredCollection(this.collection, this.filter.bind(this))
             this.resize()
+        },
+
+        onDomRefresh: function() {
+            this.ui.search.focus()
         },
 
         resize: function() {
