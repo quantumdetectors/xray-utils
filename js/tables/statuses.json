@@ -2,19 +2,25 @@
 	{ "facility": "SSRL", "status": "https://www-ssrl.slac.stanford.edu/spear_status/dcctplot24" },
 	{ "facility": "APS", "status": "http://www.aps.anl.gov/aod/blops/plots/smallStatusPlot.png" },
 	{ "facility": "ALS", "status": "http://www.als.lbl.gov/als/status/alsgeneral.gif" },
-	{ "facility": "NSLS", "status": "http://status.nsls.bnl.gov/Status/images/ringstat.gif" },
+
+	{ "facility": "NSLS-II", "status": "http://status.nsls2.bnl.gov/status-history.png" },
 	{ "facility": "CHESS", "status": "http://chartdirector.chess.cornell.edu/makechart.php?cid=3&output=PNG&hours=12" },
 	{ "facility": "CLS", "status": "ftp://transfer.lightsource.ca/BuildingStatus/ringstat.jpg" },
+
 	{ "facility": "ESRF", "status": "http://www.esrf.eu/esrf_status/gifs/img3.png" },
 	{ "facility": "SOLEIL", "status": "http://www.synchrotron-soleil.fr/images/Image/SourceAccelerateur/EtatFaisceau/MachineStatus.png" },
+
 	{ "facility": "ANKA", "status": "http://ankastatserv.ka.fzk.de:8080/axis/chart/medium/actualchart25.jpg" },
 	{ "facility": "PETRA III", "status": "http://adweb.desy.de/mca/accstatus/infoscreen/petra_status_800.png" },
 	{ "facility": "DIAMOND", "status": "http://controls.diamond.ac.uk/webstatus/workfiles/statusGraph48dpi.png" },
 	{ "facility": "SLS", "status": "https://abk.web.psi.ch/tmp/t.png" },
+
 	{ "facility": "ELETTRA", "status": "http://www.elettra.trieste.it/accelerator/images/graph2.png" },
-	{ "facility": "Aussies", "status": "https://vbl.synchrotron.org.au/lib/EMF/graph.php?pv1=SR11BCM01:CURRENT_MONITOR&pv2=SR11BCM01:LONG_LIFETIME_MONITOR&transparent=true&text=FFFFFF&h=497&w=670&random=1277192636579" },
+
+	{ "facility": "Aussies", "status": "http://fsm.synchrotron.org.au/lib/EMF/graph.php?pv1=SR11BCM01:CURRENT_MONITOR&pv2=SR11BCM01:LONG_LIFETIME_MONITOR&transparent=true&text=FFFFFF&auto=true&h=628&w=974&random=1531686041179" },
 	{ "facility": "SPring8", "status": "http://www.spring8.or.jp/ext/en/status/dcct2.gif" },
 	{ "facility": "PF KEK", "status": "http://www-pfring.kek.jp/PF/status/pfdb/sel_img_panel_scr" },
 	{ "facility": "PAL", "status": "http://141.223.48.196/png/GBEAMCURRENTday.png" },
+	
 	{ "facility": "LCLS", "status": "https://www.slac.stanford.edu/grp/cd/soft/images/lcls.gif" }
 ]
