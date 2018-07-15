@@ -78,6 +78,12 @@ img.status {
 	text-align: center;
 	position: relative;
 	border-radius: 2px;
+	transition: background 0.3s ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+		background: #eee
+	}
 
 	&:not(.selected) {
 		.filtered & {
@@ -112,6 +118,17 @@ img.status {
 
 	&.no-edges {
 		opacity: 0.6;
+	}
+
+	@media (min-width: $breakpoint-small) {
+		min-height: 70px;
+		.number, p {
+			font-size: 10px;
+		}
+		h2 {
+			font-size: 18px;
+		}
+		
 	}
 }
 
