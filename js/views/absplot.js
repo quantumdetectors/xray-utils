@@ -90,7 +90,7 @@ define(['backbone.marionette',
                 grid: {
                     borderWidth: 0,
                     markings: [
-                        { xaxis: { from:  e, to: e }, yaxis: { from: 0, to: 100 }, color: "#111" },
+                        { xaxis: { from:  e, to: e }, yaxis: { from: 0, to: 100 }, color: "#aaa" },
                     ]
                 },
 
