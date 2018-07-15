@@ -29,6 +29,16 @@ define(['backbone.marionette',
             this.calcMu = _.debounce(this.calcMu.bind(this), 100)
         },
 
+        onDomRefresh: function() {
+            console.log('render sel', this.$el.offset().top)
+            $('html, body').animate({ scrollTop: 0 }, 1000)
+            this.ui.thickness.focus()
+        },
+
+        onRender: function() {
+            
+        },
+
         removeModel: function() {
             this.model.destroy()
         },
@@ -156,7 +166,11 @@ define(['backbone.marionette',
             }))
 
         },
-        
+
+        onDomRefresh: function() {
+            this.ui.search.focus()
+        }
+
     })
 
 
