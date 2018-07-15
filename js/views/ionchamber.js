@@ -1,10 +1,11 @@
 define(['backbone.marionette',
     'utils/mucalc',
+    'models/material',
     'collections/materials',
     'json!tables/materials.json',
     'tpl!templates/ionchamber.html'], function(Marionette, 
     MuCalc,
-    Materials, materials,
+    Material, Materials, materials,
     template) {
 
 
@@ -67,16 +68,20 @@ define(['backbone.marionette',
             var formula = '('+g1.get('formula')+')'+(this.ui.g1p.val()/100)+'('+g2.get('formula')+')'+(this.ui.g2p.val()/100)
             var density = (this.ui.g1p.val()/100*this.ui.pressure.val()/760*g1.get('density')) + (this.ui.g2p.val()/100*this.ui.pressure.val()/760*g2.get('density'))
 
-            var mc = new MuCalc({ ephoton: this.ui.energy.val() })
-            var mu = mc.muCalc({ formula: formula, density: density, thickness: this.ui.iclength.val()/100 })
+            var mat = new Material({ formula: formula, density: density, thickness: this.ui.iclength.val()/100 })
+            var mup = mat.calcMu({ energy: this.ui.energy.val(), set: true })
 
-            console.log(formula, density, mu)
+            var self = this
+            mup.then(function() {
+                var mu = mat.get('absorption')
+                console.log(formula, density, mu)
 
-            var ioneV = this.ui.g1p.val()/100*g1.get('ip') + this.ui.g2p.val()/100*g2.get('ip')
-            var flux = (this.ui.voltage.val()*ioneV)/(Math.pow(10, 1*this.ui.gain.val())*1.6e-19*this.ui.energy.val()*1000*mu.absamount/100)
-            console.log(ioneV, flux)
+                var ioneV = self.ui.g1p.val()/100*g1.get('ip') + self.ui.g2p.val()/100*g2.get('ip')
+                var flux = (self.ui.voltage.val()*ioneV)/(Math.pow(10, 1*self.ui.gain.val())*1.6e-19*self.ui.energy.val()*1000*mu.absamount/100)
+                console.log(ioneV, flux)
 
-            this.ui.result.text(flux.toExponential(6))
+                self.ui.result.text(flux.toExponential(6))
+            })
         },
     })
 

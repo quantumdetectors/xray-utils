@@ -85,10 +85,13 @@ define(['backbone.marionette',
         },
 
         doPlotAbsorption: function() {
-
+            var e = parseFloat(this.getOption('energy').val())
             var options = {
                 grid: {
                     borderWidth: 0,
+                    markings: [
+                        { xaxis: { from:  e, to: e }, yaxis: { from: 0, to: 100 }, color: "#111" },
+                    ]
                 },
 
                 selection: {
@@ -106,21 +109,33 @@ define(['backbone.marionette',
                 }],
             }
 
+            var workers = []
             var data = []
             this.collection.each(function(mat) {
                 if (!mat.get('thickness')) return
-
                 var series = { label: mat.get('name'), data: [] }
-                _.each(_.range(1,30), function(e) {
-                    var abs = mat.calcMu({ energy: e })
-                    series.data.push([e, abs.absamount])
-                }, this)
+
+                var p = mat.calcMu({ energies: _.range(1,30,0.1) })
+                workers.push(p)
+
+                p.then(function(data) {
+                    _.each(data, function(pt) {
+                        series.data.push([pt.energy, pt.absamount])
+                    })
+                })
                 data.push(series)
             }, this)
 
-            this.plot = $.plot(this.ui.fig, data, options)
-            this.$el.show()
-            this.ui.load.hide()
+            var self = this
+            Promise.all(workers).then(function(d) {
+                console.log('all workers done', data)
+            
+                self.plot = $.plot(self.ui.fig, data, options)
+                self.$el.show()
+                self.ui.load.hide()    
+            }, this)
+
+            
         },
 
     })

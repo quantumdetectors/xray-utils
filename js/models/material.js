@@ -1,4 +1,4 @@
-define(['backbone', 'utils/mucalc'], function(Backbone, MuCalc) {
+define(['backbone', 'json!tables/elements.json'], function(Backbone, elements) {
 
 	return Backbone.Model.extend({
 
@@ -21,15 +21,24 @@ define(['backbone', 'utils/mucalc'], function(Backbone, MuCalc) {
         calcMu: function(options) {
         	if (options.thickness) this.set({ thickness: options.thickness }, { silent: true })
 
-        	var mc = new MuCalc({ ephoton: options.energy })
-            var res = mc.muCalc({ 
-                formula: this.get('formula'), 
-                density: this.get('density'), 
-                thickness: this.get('thickness')
+            var model = this
+            return new Promise(function(resolve) {
+                var w = new Worker('js/worker.js')
+                w.postMessage({
+                    elements: elements,
+                    ephoton: options.energy,
+                    ephotons: options.energies,
+                    formula: model.get('formula'), 
+                    density: model.get('density'), 
+                    thickness: model.get('thickness')
+                })
+                w.onmessage = function(event){
+                    console.log('message from worker', event)
+                    if (options.set) model.set({ absorption: event.data })
+                    resolve(event.data)
+                    w.terminate()
+                }
             })
-            // console.log(res)
-            if (options.set) this.set({ absorption: res })
-        	return res
         },
 
     })

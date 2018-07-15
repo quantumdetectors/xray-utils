@@ -34,7 +34,11 @@ define(['backbone.marionette',
         },
         
         calcMu: function(e) {
-            this.model.calcMu({ energy: this.getOption('energy').val(), thickness: parseFloat(this.ui.thickness.val())*1e-6, set: true })
+            var p = this.model.calcMu({ energy: this.getOption('energy').val(), thickness: parseFloat(this.ui.thickness.val())*1e-6, set: true })
+            p.then(this.showCalcMu.bind(this))
+        },
+
+        showCalcMu: function() {
             this.ui.res.html('Absorbs '+this.model.get('absorption').absamount.toFixed(1)+'% Length: '+ (this.model.get('absorption').abslen/1e-6).toFixed(2)+'&micro;m')
         }
     })
@@ -147,9 +151,12 @@ define(['backbone.marionette',
             }))
 
             this.getRegion('plot').show(new AbsorptionPlot({
-                collection: this.selected
+                collection: this.selected,
+                energy: this.ui.energy
             }))
-        }
+
+        },
+        
     })
 
 
