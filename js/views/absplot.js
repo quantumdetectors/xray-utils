@@ -4,7 +4,7 @@ define(['backbone.marionette',
         $) {
 
     return Marionette.View.extend({
-        className: 'absorption-plot',
+        className: 'absorption-plot page-panel page-panel-3',
         template: _.template('<h2>Energy vs Absorption</h2><div class="loading"><div class="loader"></div></div><figure></figure>'),
 
         ui: {
@@ -115,7 +115,7 @@ define(['backbone.marionette',
                 if (!mat.get('thickness')) return
                 var series = { label: mat.get('name'), data: [] }
 
-                var p = mat.calcMu({ energies: _.range(1,30,0.05) })
+                var p = mat.calcMu({ energies: _.range(1,30,0.1) })
                 workers.push(p)
 
                 p.then(function(data) {

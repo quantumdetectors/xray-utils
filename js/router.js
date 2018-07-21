@@ -11,6 +11,8 @@ function(Marionette, controller) {
             'abs': 'absorption',
             'ion': 'ionchamber',
 
+            'about': 'about',
+
             '*home': 'element_list',
         },
 
@@ -24,7 +26,7 @@ function(Marionette, controller) {
             $('.navbar-main a').removeClass('active')
             $('.navbar-main a').each(function(i,l) {
                 var $l = $(l)
-                var hr = $l.attr('href').replace(/\//, '')
+                var hr = $l.attr('href').replace(/#/, '')
                 if (hr == path) $l.addClass('active')
             })
         }

@@ -23,6 +23,13 @@
     src: url(../../../assets/fonts/MavenProRegular.woff) format('woff');
 }
 
+@font-face {
+  font-family: 'NavIcon';
+  src: url('../../../assets/fonts/NavIcons.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 // Weights
 $bold: 700;
@@ -54,3 +61,48 @@ $table-font-size: 13px;
 
 // Fixed Width
 $fixed-font: 'Courier';
+
+
+// Nav Icons
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "NavIcon";
+  font-size: 200%;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+   /*text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-power:before { content: '\e800'; } /* '' */
+.icon-ion:before { content: '\e801'; } /* '' */
+.icon-benzene:before { content: '\e802'; } /* '' */
+.icon-spectrum:before { content: '\e803'; } /* '' */
+.icon-info:before { content: '\f129'; } /* '' */

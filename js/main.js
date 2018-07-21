@@ -53,9 +53,6 @@ require.config({
         'backbone.syphon': 'vendor/backbone.syphon/lib/backbone.syphon',
         moment: 'vendor/moment/moment',
     },
-    packages: [
-
-    ]
 })
 
 require(['app'], function(app) {

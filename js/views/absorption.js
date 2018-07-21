@@ -1,13 +1,53 @@
 define(['backbone.marionette',
     'utils/mucalc',
     'views/absplot',
+    'models/material',
     'collections/materials',
     'json!tables/materials.json',
-    'tpl!templates/absorption.html'], function(Marionette, 
+    'utils/indexdb',
+    'tpl!templates/absorption.html', 'tpl!templates/newmaterial.html'], function(Marionette, 
     MuCalc, AbsorptionPlot,
-    Materials, materials,
-    template) {
+    Material, Materials, materials,
+    Store,
+    template, newmaterial) {
 
+
+    var NewMaterialView = Marionette.View.extend({
+        template: newmaterial,
+
+        events: {
+            'click button[name=cancel]': 'cancel',
+            'click button[name=save]': 'save',
+        },
+
+        ui: {
+            name: 'input[name=name]',
+            formula: 'input[name=formula]',
+            density: 'input[name=density]',
+        },
+
+        cancel: function() {
+            this.destroy()
+        },
+
+        save: function(e) {
+            if (!this.$el.find('form')[0].checkValidity()) return
+            e.preventDefault()
+            this.model.set({
+                name: this.ui.name.val(),
+                formula: this.ui.formula.val(),
+                density: this.ui.density.val(),
+                custom: true
+            })
+
+            this.getOption('collection').add(this.model)
+            this.cancel()
+        },
+
+        initialize: function(options) {
+            this.model = new Material()
+        }
+    })
 
 
     var SelectedMaterialView = Marionette.View.extend({
@@ -35,12 +75,9 @@ define(['backbone.marionette',
             this.ui.thickness.focus()
         },
 
-        onRender: function() {
-            
-        },
-
-        removeModel: function() {
-            this.model.destroy()
+        removeModel: function(e) {
+            e.preventDefault()
+            this.model.collection.remove(this.model)
         },
         
         calcMu: function(e) {
@@ -60,15 +97,29 @@ define(['backbone.marionette',
 
 
     var MaterialItemView = Marionette.View.extend({
-        className: 'element',
-        template: _.template('<h2><%-name%></h2><span class="formula"><%-formula_formatted%></span>'),
+        className: function() {
+            return 'element'+(this.model.get('custom') ? ' custom': '')
+        },
+        template: _.template('<% if (custom) { %><button name="delete" class="right">x</button><% } %><h2><%-name%></h2><span class="formula"><%-formula_formatted%></span>'),
         events: {
+            'click button[name="delete"]': 'deleteCustom',
             'click': 'addMaterial',
         },
 
         addMaterial: function(e) {
             e.preventDefault()
+            if ($(e.target).is('button[name="delete"]')) return
+            console.log('add done')
             this.model.collection.trigger('select', this.model)
+        },
+
+        deleteCustom: function(e) {
+            e.preventDefault()
+
+            var m = this.getOption('custommaterials').findWhere({ name: this.model.get('name'), formula: this.model.get('formula') })
+            if (m) {
+                this.getOption('custommaterials').remove(m)
+            }
         },
     })
 
@@ -113,7 +164,8 @@ define(['backbone.marionette',
             plot: {
                 el: '.plot',
                 replaceElement: true,
-            }
+            },
+            nm: '.newmaterial'
         },
 
         ui: {
@@ -123,13 +175,48 @@ define(['backbone.marionette',
 
         events: {
             'keyup @ui.search': 'filterList',
+            'click button[name=add]': 'addMaterial',
         },
 
         initialize: function() {
-            this.materials = new Materials(materials)
+            this.custommaterials = new Materials()
+            this.listenTo(this.custommaterials, 'add remove reset', this.updateCustomMaterials)
+
+            this.materials = new Materials()
             this.listenTo(this.materials, 'select', this.selectMaterial)
-            this.selected = new Materials()            
+
+            this.selected = new Materials()
+
+            this.store = new Store()
+            this.getCustomMaterials()         
         }, 
+
+
+        getCustomMaterials: function() {
+            var self = this
+            this.store.get({ store: 'materials' }).then(function(custom) {
+                console.log('got custom', custom)
+                self.custommaterials.reset(custom)
+            })
+        },
+
+        updateCustomMaterials: function(m, col, c) {
+            // console.log('updateCustomMaterials', m, arguments)
+            var all = materials.concat(this.custommaterials.toJSON())
+            this.materials.reset(all).sort()
+            if (m instanceof Material) {
+                this.store.save({ store: 'materials', objects: this.custommaterials.toJSON() }).then(function() {
+                    console.log('saved custom materials')
+                })
+                if (c.add) this.selected.add(m.clone())
+            }
+        },
+
+
+        addMaterial: function(e) {
+            e.preventDefault()
+            this.getRegion('nm').show(new NewMaterialView({ collection: this.custommaterials }))
+        },
 
 
         selectMaterial: function(m) {
@@ -151,6 +238,9 @@ define(['backbone.marionette',
             var flt = filteredCollection(this.materials, this.filter.bind(this))
             this.getRegion('materials').show(new MaterialsView({ 
                 collection: flt, 
+                childViewOptions: {
+                    custommaterials: this.custommaterials
+                }
             }))
 
             this.getRegion('selected').show(new SelectedView({ 

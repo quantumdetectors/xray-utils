@@ -5,10 +5,13 @@ define([
     'views/absorption',
     'views/ionchamber',
 
+    'views/about',
+
     'collections/elements',
     'json!tables/elements.json',
 ], function(
     StatusView, ElementListView, ElementView, AbsorptionView, IonChamberView,
+    AboutView,
     Elements, elements) {
 
     var controller = {
@@ -54,12 +57,19 @@ define([
             app.content.show(new IonChamberView())
         },
 
+
+
+        about: function() {
+            app.bc.reset([{ title: 'About' }])
+            app.content.show(new AboutView())
+        },
+
     }
 
 
     app.on('show:element', function(element) {
         controller.element(element)
-        app.navigate('/element/'+element)
+        app.navigate('#element/'+element)
     })
 
 

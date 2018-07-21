@@ -17,7 +17,6 @@ body {
     font-size: $main-font-size;
     line-height: $main-line-height;
     -webkit-text-size-adjust: 100%;
-//     min-height: 100%;
 }
 
 a {
@@ -29,18 +28,37 @@ a {
 }
 
 
-
 .content {
     background-color: $content-background;
-    margin-top: 40px;
-    margin-bottom: 85px;
-    height: 100%;
-    padding: 10px;
+    padding-bottom: 55px;
+
+    @media (orientation: landscape) {
+        margin-left: 60px;
+        padding-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint-small) {
+        margin-left: 80px;
+    }
+
+    .install-banner.show + & {
+        margin-top: 48px
+    }
+
+
+	.page-panel {
+		padding: 5px;
+	}
+
+	.page-panel-2 {
+		background: #eee;
+	}
+
+    .page-panel-3 {
+        background: #fff;
+    }
 }
 
-.page-content {
-	height: calc(100% - 15px);
-}
 
 .splash {
 	padding: 20px;

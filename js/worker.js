@@ -1,3 +1,6 @@
+// Javscript implementation of McMaster calculations
+// http://cars9.uchicago.edu/~newville/mcbook/
+// Ported from Sam Webb's Xray-Utils
 
 class MuCalc {
 
@@ -18,7 +21,7 @@ class MuCalc {
         Object.keys(el_hash).forEach(function(e) {
         	var n = el_hash[e]
             // var el = this.elements.findWhere({ symbol: e })
-            var el = this.elements.find(item => item.symbol == e)
+            var el = this.elements.find(function(item) { return item.symbol == e })
 
             if (el) {
                 var xsect = this.elementMu({ element: e })
@@ -42,7 +45,7 @@ class MuCalc {
 
     elementMu(options) {
         // var el = this.elements.findWhere({ symbol: options.element })
-        var el = this.elements.find(item => item.symbol == options.element)
+        var el = this.elements.find(function(item) { return item.symbol == options.element })
         var mcm = el.mcm
 
         if (el) {
@@ -53,7 +56,7 @@ class MuCalc {
             lines.every(function(e) {
                 _lasted = e
                 // var ed = edges.findWhere({ label: e })
-                var ed = edges.find(item => item.label == e)
+                var ed = edges.find(function(item) { return item.label == e })
                 // console.log(e, ed, mcm.get(e[0].toLowerCase()+'fit'))
                 if (ed) {
                     if (this.ephoton >= ed.energy) {
@@ -65,7 +68,7 @@ class MuCalc {
                             	var scale = ledges[le]
                             // ledges.forEach(function(scale, le) {
                                 // var led = edges.findWhere({ label: le })
-                                var led = edges.find(item => item.label == le)
+                                var led = edges.find(function(item) { return item.label == le })
                                 // console.log(le, led)
                                 if (led) {
                                     if (this.ephoton > led.energy) { 

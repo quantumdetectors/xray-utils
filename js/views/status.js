@@ -7,6 +7,7 @@ define(['backbone.marionette',
 
 
     return Marionette.View.extend({
+        className: 'page-panel',
         template: template,
 
         ui: {

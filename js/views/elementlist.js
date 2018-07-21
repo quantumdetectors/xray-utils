@@ -109,6 +109,7 @@ define(['backbone.marionette',
 
     // https://codepen.io/nemophrost/pen/EkImb
     return Marionette.View.extend({
+        className: 'page-panel',
         template: template,
 
         regions: {

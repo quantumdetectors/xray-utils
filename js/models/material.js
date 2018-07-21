@@ -1,11 +1,21 @@
 define(['backbone', 'json!tables/elements.json'], function(Backbone, elements) {
 
 	return Backbone.Model.extend({
+        idAttribute: 'name',
 
-        initialize: function(attrs, options) {
-            this.set({ formula_formatted: this.subscriptifyNumbers(this.get('formula')) })
+        defaults: {
+            formula_formatted: '',
+            custom: false
         },
 
+        initialize: function(attrs, options) {
+            this.listenTo(this, 'change:formula', this.formatFormula)
+            this.formatFormula()
+        },
+
+        formatFormula: function() {
+            this.set({ formula_formatted: this.subscriptifyNumbers(this.get('formula')) })
+        },
 
         subscriptifyNumbers: function(input) {
             if (!input) return
