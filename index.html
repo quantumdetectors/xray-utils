@@ -6,15 +6,31 @@
 
         <!-- iOS PWA -->
         <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
         <link rel="apple-touch-icon" href="assets/images/icons/qd-120.png">
         <link rel="apple-touch-icon" sizes="152x152" href="assets/images/icons/qd-152.png">
         <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/qd-180.png">
         <link rel="apple-touch-icon" sizes="167x167" href="assets/images/icons/qd-167.png">
         
-        <link rel="apple-touch-startup-image" sizes="640x1136" href="assets/images/splash/splash-640x1136.png" />
+        <!-- iPhone X (1125px x 2436px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="assets/images/splash/splash-1125x2436.png">
+        <!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="assets/images/splash/splash-750x1334.png">
+        <!-- iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus (1242px x 2208px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="assets/images/splash/splash-1242x2208.png">
+        <!-- iPhone 5 (640px x 1136px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="assets/images/splash/splash-640x1136.png">
+        <!-- iPad Mini, Air (1536px x 2048px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" href="assets/images/splash/splash-1536x2048.png">
+        <!-- iPad Pro 10.5" (1668px x 2224px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" href="assets/images/splash/splash-1668x2224.png">
+        <!-- iPad Pro 12.9" (2048px x 2732px) -->
+        <link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" href="assets/images/splash/splash-2048x2732.png">
+
 
         <!-- Android PWA -->
-
+        <link rel="manifest" href="manifest.json">
 
 
         <link rel="icon" type="image/ico" href="assets/images/qd.png" />
@@ -22,6 +38,18 @@
 
         <!-- <script type="text/javascript" data-main="js/main" src="js/vendor/requirejs/require.js"></script> -->
         <script type="text/javascript" data-main="dist/main" src="dist/vendor/requirejs/require.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122664535-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || []
+            function gtag(){ dataLayer.push(arguments) }
+            gtag('js', new Date())
+            gtag('config', 'UA-122664535-1', {
+                'custom_map': { 'cd1': 'online' }
+            })
+        </script>
+
 
         <script>
             if ('serviceWorker' in navigator) {
