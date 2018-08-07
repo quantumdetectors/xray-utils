@@ -335,3 +335,23 @@ ul.references {
     height: 5em;
   }
 }
+
+
+// Offline Banner
+.offline {
+	display: none;
+	background: #d63e3e;
+	border-radius: 5px;
+
+	margin: 2px;
+	padding: 5px;
+
+	p {
+		margin: 0;
+		text-align: center;
+	}
+
+	&.show {
+		display: block;
+	}
+}

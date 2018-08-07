@@ -2,5 +2,5 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   80%,
   100%{box-shadow:0 0;height:4em}40%{box-shadow:0 -2em;height:5em}}@keyframes load1{0%,
   80%,
-  100%{box-shadow:0 0;height:4em}40%{box-shadow:0 -2em;height:5em}}
+  100%{box-shadow:0 0;height:4em}40%{box-shadow:0 -2em;height:5em}}.offline{display:none;background:#d63e3e;border-radius:5px;margin:2px;padding:5px}.offline p{margin:0;text-align:center}.offline.show{display:block}
 /*# sourceMappingURL=main.css.map */
