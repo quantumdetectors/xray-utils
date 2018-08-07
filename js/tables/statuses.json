@@ -1,5 +1,5 @@
 [
-	{ "facility": "SSRL", "status": "https://www-ssrl.slac.stanford.edu/spear_status/dcctplot24" },
+	{ "facility": "SSRF", "status": "https://www-ssrl.slac.stanford.edu/spear_status/dcctplot24" },
 	{ "facility": "APS", "status": "http://www.aps.anl.gov/aod/blops/plots/smallStatusPlot.png" },
 	{ "facility": "ALS", "status": "http://www.als.lbl.gov/als/status/alsgeneral.gif" },
 
@@ -12,14 +12,17 @@
 
 	{ "facility": "ANKA", "status": "http://ankastatserv.ka.fzk.de:8080/axis/chart/medium/actualchart25.jpg" },
 	{ "facility": "PETRA III", "status": "http://adweb.desy.de/mca/accstatus/infoscreen/petra_status_800.png" },
+	{ "facility": "Bessy II", "status": "https://www-csr.bessy.de/webopi/ws" },
 	{ "facility": "DIAMOND", "status": "http://controls.diamond.ac.uk/webstatus/workfiles/statusGraph48dpi.png" },
 	{ "facility": "SLS", "status": "https://abk.web.psi.ch/tmp/t.png" },
+	{ "facility": "ALBA", "status": "https://www.cells.es/static/Files/Computing/Controls/Reports/msGUI.png" },
+	{ "facility": "MaxIV", "status": "" },
 
 	{ "facility": "ELETTRA", "status": "http://www.elettra.trieste.it/accelerator/images/graph2.png" },
 
-	{ "facility": "Aussies", "status": "http://fsm.synchrotron.org.au/lib/EMF/graph.php?pv1=SR11BCM01:CURRENT_MONITOR&pv2=SR11BCM01:LONG_LIFETIME_MONITOR&transparent=true&text=FFFFFF&auto=true&h=628&w=974&random=1531686041179" },
+	{ "facility": "Australian Synchrotron", "status": "http://fsm.synchrotron.org.au/lib/EMF/graph.php?pv1=SR11BCM01:CURRENT_MONITOR&pv2=SR11BCM01:LONG_LIFETIME_MONITOR&transparent=true&text=FFFFFF&auto=true&h=628&w=974&random=1531686041179" },
 	{ "facility": "SPring8", "status": "http://www.spring8.or.jp/ext/en/status/dcct2.gif" },
-	{ "facility": "PF KEK", "status": "http://www-pfring.kek.jp/PF/status/pfdb/sel_img_panel_scr" },
+	{ "facility": "Photon Factory KEK", "status": "http://www-pfring.kek.jp/PF/status/pfdb/sel_img_panel_scr" },
 	{ "facility": "PAL", "status": "http://141.223.48.196/png/GBEAMCURRENTday.png" },
 	
 	{ "facility": "LCLS", "status": "https://www.slac.stanford.edu/grp/cd/soft/images/lcls.gif" }
