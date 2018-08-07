@@ -1,7 +1,7 @@
 define(['backbone.marionette', 'utils/idb-promised'], function(Marionette) {
 
     return Marionette.Object.extend({
-        stores: ['materials'],
+        stores: ['materials', 'facilities'],
 
         initialize: function() {
             this.dbpromise = this.createIndexedDB()
@@ -9,11 +9,16 @@ define(['backbone.marionette', 'utils/idb-promised'], function(Marionette) {
 
 
         createIndexedDB: function() {
+            console.log('creating', this.getOption('stores'))
             if (!('indexedDB' in window)) {return null}
-            return idb.open('xray-utils', 1, function(upgradeDb) {
-                if (!upgradeDb.objectStoreNames.contains('materials')) {
-                    var eventsOS = upgradeDb.createObjectStore('materials', {keyPath: 'name'})
-                }
+
+            var self = this
+            return idb.open('xray-utils', 2, function(upgradeDb) {
+                _.each(self.getOption('stores'), function(st) {
+                    if (!upgradeDb.objectStoreNames.contains(st)) {
+                        var eventsOS = upgradeDb.createObjectStore(st, {keyPath: 'name'})
+                    }
+                })
             })
         },
 
@@ -21,6 +26,7 @@ define(['backbone.marionette', 'utils/idb-promised'], function(Marionette) {
         save: function(options) {
             console.log('saving', options)
             if (!('indexedDB' in window)) {return null}
+            if (!(options.store in this.getOption('stores'))) return null
             var self = this
             return this.dbpromise.then(function(db) {
                 return self.get({ store: options.store }).then(function(current) {
