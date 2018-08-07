@@ -2,6 +2,7 @@ define([
     'views/status',
     'views/elementlist',
     'views/element',
+    'views/fluofilter',
     'views/absorption',
     'views/ionchamber',
 
@@ -10,7 +11,7 @@ define([
     'collections/elements',
     'json!tables/elements.json',
 ], function(
-    StatusView, ElementListView, ElementView, AbsorptionView, IonChamberView,
+    StatusView, ElementListView, ElementView, FilterView, AbsorptionView, IonChamberView,
     AboutView,
     Elements, elements) {
 
@@ -44,6 +45,20 @@ define([
         },
 
 
+        filter: function(element, emission) {
+            var ecol = new Elements(elements)
+            var emodel = ecol.findWhere({ symbol: element })
+
+            app.bc.reset([{ title: 'Filter' }])
+            if (emodel) {
+                console.log('loading fview')
+                app.content.show(new FilterView({ emission: emission, model: emodel, elements: ecol }))
+            } else {
+
+            }
+        },
+
+
         absorption: function() {
             var ecol = new Elements(elements)
 
@@ -70,6 +85,12 @@ define([
     app.on('show:element', function(element) {
         controller.element(element)
         app.navigate('#element/'+element)
+    })
+
+
+    app.on('show:filter', function(element, emission) {
+        controller.filter(element, emission)
+        app.navigate('#filter/'+element+'/'+emission)
     })
 
 

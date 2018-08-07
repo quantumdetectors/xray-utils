@@ -8,6 +8,8 @@ function(Marionette, controller) {
             'element': 'element_list',
             'element/:element': 'element',
 
+            'filter/:element/:emission': 'filter',
+
             'abs': 'absorption',
             'ion': 'ionchamber',
 
@@ -20,6 +22,10 @@ function(Marionette, controller) {
 
         onRoute: function(name, path, args) {
             if (path == '*home') {
+                path = 'element'
+            }
+
+            if (path.startsWith('element/')) {
                 path = 'element'
             }
 
