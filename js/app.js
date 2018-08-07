@@ -50,6 +50,16 @@ function(Backbone, Marionette, MainView, $) {
     }, 50))
 
 
+    // Trigger on/offline events
+    window.addEventListener('online', function() {
+        app.status = 1
+        app.trigger('status', 1)
+    })
+
+    window.addEventListener('offline', function() {
+        app.status = 0
+        app.trigger('status', 0)
+    })
 
     return app
   
