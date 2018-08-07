@@ -40,6 +40,9 @@
             background: $table-header-background;
             color: $table-header-color;
             border: 0;
+
+            padding: 2px;
+            margin-bottom: 2px;
             
             &.sorting_asc {
                 background: $table-header-background url('images/sort_asc.png') no-repeat right center;
