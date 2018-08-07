@@ -26,7 +26,7 @@ define(['backbone.marionette', 'utils/idb-promised'], function(Marionette) {
         save: function(options) {
             console.log('saving', options)
             if (!('indexedDB' in window)) {return null}
-            if (!(options.store in this.getOption('stores'))) return null
+            if (this.getOption('stores').indexOf(options.store) == -1) return null
             var self = this
             return this.dbpromise.then(function(db) {
                 return self.get({ store: options.store }).then(function(current) {
