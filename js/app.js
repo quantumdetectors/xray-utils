@@ -15,6 +15,7 @@ function(Backbone, Marionette, MainView, $) {
             this.showView(this.main)
 
             this.content = this.main.getRegion('content')
+            this.status = navigator.onLine ? 1 : 0
         },
 
 
