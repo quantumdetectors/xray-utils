@@ -106,6 +106,7 @@ define(['backbone.marionette',
             this.populateFacilites()
             this.updateFacility()
             this.loadCustom()
+            this.updateStatus()
         }
     })
 
