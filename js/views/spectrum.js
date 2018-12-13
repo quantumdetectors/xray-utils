@@ -104,7 +104,7 @@ define(['backbone.marionette',
             if (range < 1) range = 2
             var max = Math.round(((range+options.min)*2) * 10)*10
             _.each(_.range(max), function(i) {
-                data.push([i*10, 0])
+                data.push([i/100, 0])
             })
 
             return data
