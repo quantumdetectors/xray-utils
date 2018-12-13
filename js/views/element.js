@@ -1,8 +1,9 @@
 define(['backbone.marionette',
     'views/spectrum',
     'views/table',
+    'views/anom',
     'tpl!templates/element.html'], function(Marionette, 
-    SpectrumView, TableView,
+    SpectrumView, TableView, AnomalousView,
     template) {
 
     var PrecCell = Backgrid.NumberCell.extend({
@@ -34,6 +35,7 @@ define(['backbone.marionette',
             abs: '.abs',
             emis: '.emis',
             spec: '.spectra',
+            anom: '.anom',
         },
 
         onRender: function() {
@@ -67,6 +69,7 @@ define(['backbone.marionette',
             }))
 
             if (this.model.get('lines').length) this.getRegion('spec').show(new SpectrumView({ model: this.model }))
+            if (this.model.get('number') <= 92) this.getRegion('anom').show(new AnomalousView({ model: this.model, energy: this.model.get('edges').at(0).get('energy') }))
         }
     })
 
