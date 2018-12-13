@@ -365,3 +365,26 @@ a.back {
     border-radius: 5px;
     text-decoration: none;
 }
+
+
+figcaption ul {
+	margin-bottom: 5px;
+	
+	li {
+	    display: inline-block;
+	    width: calc(50% - 4px - 6px);
+	    text-align: center;
+	    background: #eee;
+	    margin: 2px;
+	    padding: 3px;
+
+	    .super {
+	    	vertical-align: super;
+		}
+
+		.title:after {
+	    	content: ':';
+	    	padding-right: 2px;
+		}
+	}
+}
