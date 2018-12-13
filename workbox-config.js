@@ -12,6 +12,7 @@ module.exports = {
     "dist/main.js",
 
     "dist/tables/*.json",
+    "dist/tables/chantler/*.json",
 
     "js/worker.js",
   ],
