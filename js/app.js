@@ -35,6 +35,16 @@ function(Backbone, Marionette, MainView, $) {
         mobile: function() {
             return $(window).width() < 568
         },
+
+        
+        convert: function(val) {
+            var ev = 1.60218e-19
+            var h = 6.62607004e-34
+            var c = 2.99792458e8
+
+            var ang = 1e-10
+            return (h*c)/(ang*ev*val)
+        },
     })
 
 
