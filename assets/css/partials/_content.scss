@@ -25,6 +25,15 @@
 select[name=facility] {
 	font-size: 14px;
 	margin-bottom: 5px;
+	width: calc(100% - 105px);
+	margin: 0 0 5px 0;
+}
+
+button[name=default] {
+	float: right;
+	width: 100px;
+	padding: 7px;
+    margin: 0 0 5px 0;
 }
 
 .image-holder {
@@ -353,6 +362,19 @@ ul.references {
 
 	&.show {
 		display: block;
+	}
+}
+
+.message {
+	background: #e5d269;
+	border-radius: 5px;
+
+	margin: 2px;
+	padding: 5px;
+
+	p {
+		margin: 0;
+		text-align: center;
 	}
 }
 
