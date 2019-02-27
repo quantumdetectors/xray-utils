@@ -8,7 +8,7 @@
 	{ "facility": "CLS", "status": "ftp://transfer.lightsource.ca/BuildingStatus/ringstat.jpg" },
 
 	{ "facility": "ESRF", "status": "http://www.esrf.eu/esrf_status/gifs/img3.png" },
-	{ "facility": "SOLEIL", "status": "http://www.synchrotron-soleil.fr/images/Image/SourceAccelerateur/EtatFaisceau/MachineStatus.png" },
+	{ "facility": "SOLEIL", "status": "https://www.synchrotron-soleil.fr/sites/default/files/WebInterfaces/machinestatus/MachineStatus-extranet-medium.png" },
 
 	{ "facility": "ANKA", "status": "http://ankastatserv.ka.fzk.de:8080/axis/chart/medium/actualchart25.jpg" },
 	{ "facility": "PETRA III", "status": "http://adweb.desy.de/mca/accstatus/infoscreen/petra_status_800.png" },
