@@ -6,3 +6,5 @@ rm -rf ../dist/templates
 cd ../dist/tables
 rm *.json
 ln -s ../../js/tables/*.json .
+
+# npx workbox-cli injectManifest workbox-config.js
