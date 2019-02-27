@@ -3,10 +3,10 @@ define(['backbone', 'models/status', 'utils/kvcollection'], function(Backbone, S
     return Backbone.Collection.extend(_.extend({}, KVCollection, {
     	model: Status,
     	
-        keyAttribute: 'facility',
-        valueAttribute: 'facility',
+        keyAttribute: 'name',
+        valueAttribute: 'acronym',
 
-        comparator: 'facility',
+        comparator: 'name',
     }))
 
 })
