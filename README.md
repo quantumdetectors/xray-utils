@@ -14,3 +14,4 @@ https://quantumdetectors.github.io/xray-utils/
 * McMaster Calculations derrived from: W.H. McMaster N.K. Del Grande, J.H. Mallett and J.H. Hubbell, "Compilation of x-ray cross sections", Lawrence Livermore National Laboratory Report UCRL-50174 (section I 1970, section II 1969, section III 1969 and section IV 1969).
 * X-ray Absorption and Emission Lines data from: https://github.com/scikit-beam/XrayDB
 * JSON Periodic Table: https://github.com/Bowserinator/Periodic-Table-JSON
+* Resonant scattering cross sections f'(E) and f''(E): C. T. Chantler, Journal of Physical and Chemical Reference Data 29, pp597-1048 (2000) http://dx.doi.org/10.1063/1.1321055
