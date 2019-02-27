@@ -30,6 +30,18 @@ require.config({
             deps: ['jquery']
         },
 
+        proj4: {
+            exports: 'proj4',
+        },
+
+        highmaps: {
+            deps: ['jquery', 'proj4'],
+            exports: 'Highcharts'
+        },
+        'highmaps-world': {
+            deps: ['highmaps'],
+        },
+
     },
     paths: {
         Flot: 'vendor/Flot/jquery.flot',
@@ -52,6 +64,9 @@ require.config({
         'flot.tooltip.pib': 'vendor/flot.tooltip.pib/js/jquery.flot.tooltip',
         'backbone.syphon': 'vendor/backbone.syphon/lib/backbone.syphon',
         moment: 'vendor/moment/moment',
+        proj4: 'vendor/proj4',
+        highmaps: 'vendor/highmaps/highmaps',
+        'highmaps-world': 'vendor/highmaps/world',
     },
 })
 
